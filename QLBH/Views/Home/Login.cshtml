@@ -1,0 +1,20 @@
+﻿@model QLBH.Models.KhachHang
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        @Html.LabelFor(M => M.Email, "Email")
+        @Html.TextBoxFor(M => M.Email)
+    </div>
+    <div>
+        @Html.LabelFor(M => M.MatKhau, "Mật khẩu")
+        @Html.PasswordFor(M => M.MatKhau)
+    </div>
+    <input type="submit" value="ĐĂNG NHẬP" />
+}

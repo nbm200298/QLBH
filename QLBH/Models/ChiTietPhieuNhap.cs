@@ -17,7 +17,7 @@ namespace QLBH.Models
         public int HangHoa_ID { get; set; }
         //[ForeignKey("HangHoa_ID")]
         //public HangHoa Hanghoa { get; set; }
-        [Required, MinLength(10)]
+        [Required]
         public int TongSoLuongNhap { get; set; }
         public int ThueSuat { get; set; }
         [Required]

@@ -26,5 +26,7 @@ namespace QLBH.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
+
+        public System.Data.Entity.DbSet<QLBH.Models.Article> Articles { get; set; }
     }
 }

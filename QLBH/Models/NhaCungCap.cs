@@ -10,7 +10,7 @@ namespace QLBH.Models
     {
         [Key]
         public int IDNCC { get; set; }
-        [Required, MinLength(10)]
+        [Required]
         public string TenNCC { get; set; }
         public string DiaChi { get; set; }
         [Required, MinLength(8), MaxLength(10)]

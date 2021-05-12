@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/cheditor")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -16,13 +17,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li class="nav-item mx5">@Html.ActionLink("Article", "Index", "Articles")</li>*@
+                    @if (Session["IDKhachHang"] == null)
+                    {
+                        <li class="nav-item mx5">@Html.ActionLink("ĐĂNG KÝ", "register", "Home")</li>
+                        <li>@Html.ActionLink("ĐĂNG NHẬP", "Login", "Home")</li>
+                    }
+                    else
+                    {
+                        <li class="nav-item mx5">@Html.ActionLink("HÀNG HÓA", "Index", "HangHoas")</li>
+                        <li class="nav-item mx5">@Html.ActionLink("LOẠI HÀNG", "Index", "LoaiHangs")</li>
+                        <li class="nav-item mx5">@Html.ActionLink("CHI TIẾT HÓA ĐƠN", "Index", "ChiTietHoaDons")</li>
+                        @*<li class="nav-item mx5">@Html.ActionLink("CHI TIẾT PHIẾU NHẬP", "Index", "ChiTietPhieuNhaps")</li>*@
+                        <li class="nav-item mx5">@Html.ActionLink("HÓA ĐƠN", "Index", "HoaDons")</li>
+                        @*<li class="nav-item mx5">@Html.ActionLink("PHIẾU NHẬP ", "Index", "PhieuNhaps")</li>*@
+                        @*<li class="nav-item mx5">@Html.ActionLink("NHÀ CUNG CẤP", "Index", "NhaCungCaps")</li>
+                        <li class="nav-item mx5">@Html.ActionLink("KHÁCH HÀNG", "Index", "KhachHangs")</li>*@
+                        <li class="nav-item mx5">@Html.ActionLink("NHÂN VIÊN", "Index", "NhanViens")</li>
+                        <li class="nav-item mx5">@Html.ActionLink("ĐĂNG XUẤT", "Logout", "Home")</li>
+                    }
                 </ul>
             </div>
         </div>

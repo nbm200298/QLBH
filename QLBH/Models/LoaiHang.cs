@@ -10,7 +10,7 @@ namespace QLBH.Models
     {
         [Key]
         public int IDLoaiHang { get; set; }
-        [Required, MinLength(10)]
+        [Required]
         public string TenLoaiHang { get; set; }
         public string GhiChu { get; set; }
         public ICollection<HangHoa> HangHoas { get; set; }

@@ -1,0 +1,59 @@
+﻿@model QLBH.Models.ChiTietPhieuNhap
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietPhieuNhap</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hanghoa.TenHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hanghoa.TenHang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhieuNhaps.LyDoNhap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhieuNhaps.LyDoNhap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongSoLuongNhap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongSoLuongNhap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThueSuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThueSuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaNhap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaNhap)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDChiTietPhieuNhap }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

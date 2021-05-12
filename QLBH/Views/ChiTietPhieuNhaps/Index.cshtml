@@ -1,0 +1,58 @@
+﻿@model IEnumerable<QLBH.Models.ChiTietPhieuNhap>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Hanghoa.TenHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhieuNhaps.LyDoNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongSoLuongNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThueSuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaNhap)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hanghoa.TenHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhieuNhaps.LyDoNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongSoLuongNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThueSuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaNhap)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDChiTietPhieuNhap }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDChiTietPhieuNhap }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDChiTietPhieuNhap })
+        </td>
+    </tr>
+}
+
+</table>

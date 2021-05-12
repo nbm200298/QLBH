@@ -1,0 +1,64 @@
+﻿@model IEnumerable<QLBH.Models.HangHoa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiHang.TenLoaiHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongSoLuongHangTon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DacDiem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiHang.TenLoaiHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongSoLuongHangTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DacDiem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDHangHoa }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDHangHoa }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDHangHoa })
+        </td>
+    </tr>
+}
+
+</table>

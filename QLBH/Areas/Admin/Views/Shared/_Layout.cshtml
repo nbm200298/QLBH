@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-expand-sm bg-dark nav-dark w-100">
+            <! -- Links -->
+            <ul class="nav navbar-nav">
+                <li class="nav-item mx5">@Html.ActionLink("HÀNG HÓA", "Index", "HangHoas")</li>
+                <li class="nav-item mx5">@Html.ActionLink("LOẠI HÀNG", "Index", "LoaiHangs")</li>
+                <li class="nav-item mx5">@Html.ActionLink("CHI TIẾT HÓA ĐƠN", "Index", "ChiTietHoaDons")</li>
+                <li class="nav-item mx5">@Html.ActionLink("CHI TIẾT PHIẾU NHẬP", "Index", "ChiTietPhieuNhaps")</li>
+                <li class="nav-item mx5">@Html.ActionLink("HÓA ĐƠN", "Index", "HoaDons")</li>
+                <li class="nav-item mx5">@Html.ActionLink("PHIẾU NHẬP ", "Index", "PhieuNhaps")</li>
+                <li class="nav-item mx5">@Html.ActionLink("NHÀ CUNG CẤP", "Index", "NhaCungCaps")</li>
+                <li class="nav-item mx5">@Html.ActionLink("KHÁCH HÀNG", "Index", "KhachHangs")</li>
+                <li class="nav-item mx5">@Html.ActionLink("NHÂN VIÊN", "Index", "NhanViens")</li>
+                <li class="nav-item mx5">@Html.ActionLink("ĐĂNG XUẤT", "Index", "Logout")</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

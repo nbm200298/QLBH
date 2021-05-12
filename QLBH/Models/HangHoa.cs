@@ -14,13 +14,13 @@ namespace QLBH.Models
         public int LoaiHang_ID { get; set; }
         //[ForeignKey("LoaiHang_ID")]
         //public LoaiHang LoaiHang { get; set; }
-        [Required, MinLength(10)]
+        [Required]
         public string TenHang { get; set; }
         public int TongSoLuongHangTon { get; set; }
         public string DacDiem { get; set; }
-        [Required, MinLength(10)]
+        [Required]
         public int GiaNhap { get; set; }
-        [Required, MinLength(10)]
+        [Required]
         public int GiaBan { get; set; }
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public ICollection<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }

@@ -1,0 +1,40 @@
+﻿@model QLBH.Models.KhachHang
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+<div class="container">
+    <div class="col-6">
+        <h1>Chỗ này để tạo form</h1>
+        @using (Html.BeginForm("register", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                @Html.LabelFor(k => k.TenKhachHang, "Tên Khách Hàng: ")
+                @Html.TextBoxFor(k => k.TenKhachHang, new { @placeholder = "Tên Khách Hàng" })
+            </div>
+            <div>
+                @Html.LabelFor(k => k.DiaChi, "Địa Chỉ: ")
+                @Html.TextBoxFor(k => k.DiaChi, new { @placeholder = "Địa Chỉ" })
+            </div>
+            <div>
+                @Html.LabelFor(k => k.SDTKh, "Số Điện Thoại: ")
+                @Html.TextBoxFor(k => k.SDTKh, new { @placeholder = "Số Điện Thoại"})
+            </div> 
+            <div>
+                @Html.LabelFor(k => k.Email, "Email: ")
+                @Html.TextBoxFor(k => k.Email, new { @placeholder = "Email" })
+            </div> <div>
+                @Html.LabelFor(k => k.MatKhau, "Mật Khẩu: ")
+                @Html.TextBoxFor(k => k.MatKhau, new { @placeholder = "Mật Khẩu" })
+            </div> <div>
+                @Html.LabelFor(k => k.Confirm_MatKhau, "Xác Nhận Mật Khẩu: ")
+                @Html.TextBoxFor(k => k.Confirm_MatKhau, new { @placeholder = "Xác Nhận Mật Khẩu" })
+            </div>
+            <input type="submit" value="ĐĂNG KÝ" />
+        }
+    </div>
+</div>
+

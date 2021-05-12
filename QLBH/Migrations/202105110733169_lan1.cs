@@ -1,0 +1,29 @@
+namespace QLBH.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class lan1 : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Articles",
+                c => new
+                    {
+                        ArticleID = c.String(nullable: false, maxLength: 128),
+                        Author = c.String(),
+                        ArticleContent = c.String(),
+                    })
+                .PrimaryKey(t => t.ArticleID);
+            
+            DropColumn("dbo.KhachHangs", "TaiKhoan");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.KhachHangs", "TaiKhoan", c => c.String());
+            DropTable("dbo.Articles");
+        }
+    }
+}

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<QLBH.Models.NhaCungCap>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNCC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDTNcc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDTNcc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDNCC }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDNCC }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDNCC })
+        </td>
+    </tr>
+}
+
+</table>

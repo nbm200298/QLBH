@@ -1,6 +1,5 @@
 namespace QLBH.Migrations
 {
-    using QLBH.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,27 +14,10 @@ namespace QLBH.Migrations
 
         protected override void Seed(QLBH.Models.DbConnect context)
         {
-            context.KhachHangs.AddOrUpdate
-                (K => K.TenKhachHang,
-                new KhachHang
-                {
-                    TenKhachHang = "Anh",
-                    DiaChi = "So 24",
-                    SDTKh = "0210000000",
-                },
-                new KhachHang
-                {
-                    TenKhachHang = "Banh",
-                    DiaChi = "So 25",
-                    SDTKh = "0210000001",
-                },            
-                new KhachHang
-                {
-                    TenKhachHang = "Canh",
-                    DiaChi = "So 26",
-                    SDTKh = "0210000002",
-                }
-              );
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data.
         }
     }
 }
